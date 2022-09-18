@@ -1,0 +1,28 @@
+
+  .paper {
+    padding: '10px';
+    display: 'flex'; 
+    flex-direction: 'column';
+    justify-content: 'center';
+    width: '100px'
+  }
+  .mapContainer {
+    height: '100%'; 
+    width: '100%';
+    display: block;
+    position: relative;
+  }
+
+  .markerContainer {
+    position: 'absolute';
+    transform: 'translate(-50%, -50%)'; 
+    z-Index: 1;
+  }
+
+  .markerContainer:hover{
+    z-index: 2;
+  }
+
+  .pointer {
+    cursor: 'pointer';
+  }
