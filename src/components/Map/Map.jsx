@@ -1,43 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {useJsApiLoader, GoogleMap, Marker} from '@react-google-maps/api';
 import './styles.css';
 
-const Map = () => {
-
-  var lat, lng
- 
-  navigator.geolocation.getCurrentPosition(showPosition, ()=>{console.log('no')});
+export default function Map() {
   
+  var lati, lngi
+  var coords = {lat:14, lng:-9}
+  window.onload = navigator.geolocation.getCurrentPosition(showPosition, ()=>{console.log('no')});
   
   function showPosition(position) {
-    console.log(position.coords)
-  }
-
-
-    const coords = {lat:22, lng:80};
-
+      lati = position.coords.latitude
+      lngi = position.coords.longitude
+      
+      coords.lat = lati
+      coords.lng = lngi
+      console.log(coords.lat,coords.lng, '1')
+    }
+    
     const {isLoaded} = useJsApiLoader({
-        googleMapsApiKey: 'AIzaSyCptcuNcT8JQIOtPNPM0Qf9-1S4fPOJWXw'
+        googleMapsApiKey: process.env.REACT_APP_MAP_API
     })
 
-    if(!isLoaded)
-        return <div>Loading...</div>
-    
+  if(!isLoaded)
+      return <div>Loading...</div>
+ 
   return (
     <div className='mapContainer'>
+      {/* {console.log(coords.lat, '2')} */}
       <GoogleMap
    
         center={coords}
         zoom={15}
-        defaultZoom={14}
-        mapContainerStyle={{width:'100%', height:'70vh', float:'right', position:'sticky', top:100, margin:'30px'}}
+        defaultZoom={10}
+        mapContainerStyle={{width:'100%', height:'70vh', float:'right', position:'sticky', top:80, marginRight:'20px'}}
         margin={[50, 50, 50, 50]}
       >
         <Marker position={coords}></Marker>
-       
+        {/* {console.log(coords.lat,coords.lng)} */}
       </GoogleMap>
+      {test}
     </div>
-  );
-};
-
-export default Map;
+  )
+  function test(){console.log(coords.lat, 'test')}
+  }
