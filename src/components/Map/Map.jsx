@@ -32,7 +32,7 @@ export default function Map() {
         center={coords}
         zoom={15}
         defaultZoom={10}
-        mapContainerStyle={{width:'100%', height:'70vh', float:'right', position:'sticky', top:80, marginRight:'20px'}}
+        mapContainerStyle={{width:'100%', height:'60vh', float:'right', position:'sticky', top:80, marginRight:'20px'}}
         margin={[50, 50, 50, 50]}
       >
         <Marker position={coords}></Marker>
