@@ -5,20 +5,32 @@ import Fab from '@mui/material/Fab';
 import AddIcon from '@mui/icons-material/Add';
 import $ from "jquery";
 import Header from "../Header/Header";
-import { Component } from "react";
 
+var coords = {lat:10, lng:20}
 
-export default class List extends Component {
-    shouldComponentUpdate() {    
-        return false
-      }
-
+export default function List () {
+    
+    var lati, lngi
+  
+    window.onloadeddata = navigator.geolocation.getCurrentPosition(showPosition, ()=>{console.log('no')});
+    
+    function showPosition(position) {
       
-  render() {
+        lati = position.coords.latitude
+        lngi = position.coords.longitude
+        
+        coords.lat = lati
+        coords.lng = lngi
+        console.log(coords)
+      }
+    
     const icon = '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAAAu0lEQVRIie2VQQrCMBBFf9z1Ap7BRV3ZpV7HW3ZV0INUkPYSz80siiZI61gi5kMgTJL/JpOQSEW5CrjyqouXeRcxX6ouxti4ZPpmHyswfkAhNQC4lCiEEGWsccZRFXC24KOkRtI4iY0WO7lklHiFDjZWA4O12mJNbIEXeAqqn/rDN8EAI7CfzNsB99TklL/X5fJ7j3MrtdvlmlvqCmgktZK21lqLVXOMyieRBfjm4N8vAZ8/hPfmUfSnegA2268orRY1KwAAAABJRU5ErkJggg==">'
 
     var i = 1;
-    return (
+      
+  return(
+    
+    
     <>
         <Header/>
         <div id="listbody">
@@ -35,7 +47,7 @@ export default class List extends Component {
                 <ul id="items"></ul>
                 
             </div>
-            <Map/>
+            <Map coords = {coords}/>
         </div>
         </>
     )
@@ -79,7 +91,5 @@ export default class List extends Component {
           document.getElementById('place').value = ''
         }
       }
-
-}
 
 }
