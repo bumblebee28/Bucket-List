@@ -32,7 +32,6 @@ export default function List () {
     
     
     <>
-        <Header/>
         <div id="listbody">
             <div id="list">
                 <div className="lihead">
@@ -47,7 +46,7 @@ export default function List () {
                 <ul id="items"></ul>
                 
             </div>
-            <Map coords = {coords}/>
+            {/* <Map coords = {coords}/> */}
         </div>
         </>
     )

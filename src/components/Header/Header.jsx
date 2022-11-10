@@ -54,18 +54,6 @@ const Header = () => {
             }
           }
           
-
-// function getLocation() {
-//   if (navigator.geolocation) {
-//     navigator.geolocation.getCurrentPosition(showPosition);
-//   }
-// }
-
-// function showPosition(position) {
-//   var lat = position.coords.latitude
-//   var lng = position.coords.longitude
-//   console.log(lat,lng)
-// }
 }
 
 export default Header;

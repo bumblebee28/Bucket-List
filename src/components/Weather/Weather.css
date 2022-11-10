@@ -1,0 +1,126 @@
+.weather-body{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    height: 100vm;
+    gap: 1rem;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 20px;
+    background: #000000d0;
+    opacity: 0.9;
+    color: white;
+    padding: 1rem;
+    margin-top: 1rem;
+    width: 30rem;
+}
+
+.container-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 20px;
+    width: 35rem;
+    gap: 1rem;
+}
+
+.weather{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-w {
+    font-family: 'Roboto', sans-serif;
+    justify-content: center;
+    padding: 7px;
+    display: flex;
+    align-items: center;
+}
+
+.input_search {
+    border: none;
+    width: 80%;
+    background: #b6b4b42b;
+    border-radius: 10px;
+    height: 30px;
+    padding-left: 10px;
+    color: white;
+    /* padding: 5px; */
+}
+
+button {
+    border-radius: 50%;
+    margin: 5px;
+}
+
+.temp {
+    /* border: 2px solid gray; */
+    margin: 5px;
+    font-size: xx-large;
+    font-weight: 500;
+}
+
+span{
+    display: flex;
+    align-items: center;
+}
+
+ /* .desc{
+    border: 2px solid red;
+    margin: 4px;
+}  */
+
+
+#card {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    font-family: 'Roboto', sans-serif;
+    width: 90%;
+    height: 45vh;
+    overflow: scroll;
+    color: white;
+    background-color: #ffffff50;
+    border-radius: 20px;
+}
+
+#card-body{
+    margin: 1rem;
+    border-radius: 20px;
+    background-color: #000000d0;
+    padding: 2px 5px;
+    width: 10rem;
+    height: 15rem;
+    opacity: 0.95;
+    gap: 1px;
+    align-items: center;
+    text-align: center;
+
+}
+
+#card::-webkit-scrollbar {
+    display: none;
+  }
+
+  .top-head{
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    justify-content: space-between;
+    /* align-items: center;*/
+    justify-items: center;
+    align-content: space-around;
+    gap: 1rem;
+    height: 100%;
+  }
